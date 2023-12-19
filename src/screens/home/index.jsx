@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Picker } from "@react-native-picker/picker";
-import TeamInfo from "../../components/TeamInfo";
+import TeamInfo from "../../components/TeamInfo/TeamInfo";
 
 const Home = () => {
   const [teams, setTeams] = useState([]);
@@ -53,7 +53,7 @@ const Home = () => {
   }, [selectedTeam]);
   return (
     <View style={styles.container}>
-      <Text>Select a Team:</Text>
+      <Text style={styles.title}>Football Info</Text>
       <Picker
         selectedValue={
           selectedTeam
@@ -90,6 +90,11 @@ const styles = StyleSheet.create({
     width: 200,
     height: 44,
   },
+  title:{
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20
+  }
 });
 
 export default Home;
